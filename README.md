@@ -56,7 +56,7 @@ Compiling your contracts...
 > Compiled successfully using:
    - solc: 0.5.8+commit.23d335f2.Emscripten.clang
 ```
-It creates a NameChange.json into the /build folder
+It creates a MarketPlace..json into the /build folder
 this files contains the ABI details for the contract, meaning that Application Binary Interface. The Application Binary Interface (ABI) is a data encoding scheme used in Ethereum for working with smart contract. this can be used in later stage of this process.
 
 ##### 5. Deploy the contract
