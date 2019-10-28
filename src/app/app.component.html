@@ -1,21 +1,69 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+
+
+<div class="loading-indicator" *ngIf="show == true">
+  <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+
+<mat-toolbar color="primary"  style="min-height: 55px !important; height: 55px !important;" class="mat-elevation-z6">
+  <span class="font-14">BlockChain DApp</span>
+  <span class="example-spacer"></span>
+  <span class="font-14">Balance : {{balance}} ETH</span>
+</mat-toolbar>
+
+
+
+<mat-tab-group mat-stretch-tabs>
+  <mat-tab>
+
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">add</mat-icon>
+      Add Product
+    </ng-template>
+
+    <div class="text-center">
+
+      <h3>Add Product</h3>
+
+      <div class="example-form margin-auto">
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Product Name</mat-label>
+          <input type="text" matInput placeholder="Product Name" [(ngModel)]="productName">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="example-full-width">
+          <mat-label>Product Price</mat-label>
+          <input type="text" matInput placeholder="Product Price"  [(ngModel)]="productPrice">
+        </mat-form-field>
+        <button class="example-full-width" mat-raised-button color="primary" (click)="createProducts(productName, productPrice)" >Add Product</button>
+
+      </div>
+
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="example-tab-icon">list</mat-icon>
+      Product List
+    </ng-template>
+    <mat-list>
+      <h2 mat-subheader>Product List</h2>
+      <mat-list-item *ngFor="let product of totalProduct;let i = index; trackBy: trackByFn">
+        <!--<mat-icon mat-list-icon>folder</mat-icon>-->
+        <img matListAvatar src="../assets/ethereum.png" alt="icon">
+        <h4 mat-line>{{product.name}}</h4>
+        <p mat-line>$ {{convertEtherToPrice(product.price)}}</p>
+        <span class="example-spacer"></span>
+        <span *ngIf="product.purchased" style="color: green"> Purchased </span>
+        <button *ngIf="!product.purchased" color="primary" mat-button (click)="purchaseProducts(product.id, product.price)" >Buy</button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+
 
 <router-outlet></router-outlet>
