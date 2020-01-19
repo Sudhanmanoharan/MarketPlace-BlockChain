@@ -19,3 +19,8 @@
   right: 0;
   z-index: 2;
 }
+
+
+code {
+  background: hsl(220, 80%, 90%);
+}

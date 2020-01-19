@@ -31,7 +31,7 @@ contract MarketPlace {
   );
 
   constructor() public {
-    name = "Sudhan.M";
+    name = "Sudhan";
   }
 
   function createProduct(string memory _name, uint _price) public {
