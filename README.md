@@ -3,6 +3,15 @@
 # Ethereum Decentralized application
 This document provides you the guidance on how to create a decentralized application and test on ethereum blockchain network by using Ganache and I wrote the test-case under the test folder.
 
+### Screen Shots
+
+![Main Screen](3.jpg)
+#
+![Buyer And Seller](2.png)
+#
+![Ether Transaction](1.jpg)
+#
+
 ##### Tools and Frameworks
 We are using following tools and frameworks for this application
 * [truffle](https://www.trufflesuite.com/) - as development tool.
