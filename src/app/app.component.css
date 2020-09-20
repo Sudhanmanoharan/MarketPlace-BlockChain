@@ -1,0 +1,26 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+
+code {
+  background: hsl(220, 80%, 90%);
+}
