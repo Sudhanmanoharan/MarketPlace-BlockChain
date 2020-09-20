@@ -15,12 +15,6 @@ export class AppComponent implements OnInit {
   totalProduct = [];
   private marketPlace: any;
   balance: any;
-  data = {
-    id: 'services.html',
-    img: 'img/SolutionInnerbananer.jpg',
-    html: '<h2 class="font-14">AboutUs<\/h2><pclass="fg-white">developing and supporting complex IT solutions.Touchingmillions of lives world wide by bringing in innovative technology <\/p>'
-  };
-
   constructor(private web3: Web3Service, private cd: ChangeDetectorRef) {
 
     this.web3.checkAndInstantiateWeb3()
